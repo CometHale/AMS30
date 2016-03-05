@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href={% static 'supers/big_bang.css'%}/>
+
+<body>
+
+	<a href="{% url 'supers:index' %}"><img src="{% static "supers/images/home.png" %}" alt="Home" style="width:150px;height:75px;"></a>
+		<form action="{% url 'supers:index' %}" method="post">
+			{% csrf_token %}
+			{% for field in form %}
+						<div class="formWrapper">
+							<div class="fieldLabel">
+								{{field.label_tag}}
+							</div>
+							<br>
+							{{field}}
+						</div>
+			{% endfor %}
+			<input type="submit" value="Submit" />
+		</form>
+</body>

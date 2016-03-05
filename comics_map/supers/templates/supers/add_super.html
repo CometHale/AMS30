@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href={% static 'supers/form.css' %}/>
+
+<body>
+	<a href="{% url 'supers:index' %}"><img src="{% static "supers/images/home.png" %}" alt="Home" style="width:150px;height:75px;"></a>
+<form action="{% url 'supers:detail' id_name" method="post">
+	{% csrf_token %}
+	{% for field in form %}
+				<div class="formWrapper">
+					<div class="fieldLabel">
+						{{field.label_tag}}
+					</div>
+					<br>
+					{{field}}
+				</div>
+	{% endfor %}
+	<input type="submit" value="Submit" />
+</form>
+
+	<a href="{% url 'supers:add_city' %}">Don't See Your City? Click Here </a><br>
+	<a href="{% url 'supers:big_bang' %}">Don't See the Right Universe? Click Here</a>
+</body>

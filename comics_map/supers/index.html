@@ -1,0 +1,9 @@
+{% if supers_list %}
+	<ul>
+		{%for super in supers_list %}
+			<li><a href="/supers/{{ super.id }}/">{{ super.name }}</a></li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<p> The Supers are taking a break </p>
+		{% endif %}

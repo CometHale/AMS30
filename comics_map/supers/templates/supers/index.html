@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href={% static 'supers/index.css'%} />
+
+{% if supers_list %}
+<body>
+	<ul>
+		<br>
+		<br>
+		<a href="{% url 'supers:add_super'%}"><img src="{% static "supers/images/register_super.png" %}" alt="Register A Super" style="width:150px;height:75px;"></a>
+		<a href="{% url 'supers:add_city' %}"><img src="{% static "supers/images/add_city.png" %}" alt="Add A City" style="width:150px;height:75px;"></a>
+		<a href="{% url 'supers:big_bang' %}"><img src="{% static "supers/images/expand_universe.png" %}" alt="Expand The Universe" style="width:150px;height:75px;"></a>
+		{%for super in supers_list %}
+		 <h2> Recently Registered </h2>
+			<li><a href="{% url 'supers:index' super.id %}">{{ super.name }}</a></li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<br>
+		<br>
+		<a href="{% url 'supers:add_super'%}"><img src="{% static "supers/images/register_super.png" %}" alt="Register A Super" style="width:150px;height:75px;"></a>
+		<a href="{% url 'supers:add_city' %}"><img src="{% static "supers/images/add_city.png" %}" alt="Add A City" style="width:150px;height:75px;"></a>
+		<a href="{% url 'supers:big_bang' %}"><img src="{% static "supers/images/expand_universe.png" %}" alt="Expand The Universe" style="width:150px;height:75px;"></a>
+		<h2> The Supers are taking a break </h2>
+		{% endif %}
+</body>
