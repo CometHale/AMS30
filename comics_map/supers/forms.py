@@ -4,16 +4,13 @@ from .models import Super, IRLCity, Universe
 class AddSuperForm(ModelForm):
 	class Meta:
 		model = Super
-		fields = ('name', 'identity', 'origin_city', 'origin_state', 'irl_city', 'first_appearance', 'company_universe', 'description')
+		fields = ('name', 'identity', 'origin_city','irl_city','company_universe')
 		labels = {
 			'name': 'Superhero Name',
 			'identity': 'Identity',
 			'origin_city': 'Origin City',
-			'origin_state': 'Origin State',
 			'irl_city': 'Real Life City',
-			'first_appearance': 'Date of First Appearance',
 			'company_universe': 'Company/Universe',
-			'description': 'Description',
 		}
 
 class AddIRLCityForm(ModelForm):

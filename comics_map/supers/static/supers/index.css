@@ -1,13 +1,16 @@
 li a {
-	color: red;
+	color: #fdbd00;
+	background: black;
+	background-size: 50px;
 }
 
 body{ 
-	background: #830202 url("images/index.png") no-repeat bottom;
+	background: #830202 url("images/index.png") no-repeat left center;
 	background-size: 1300px;
 }
 
 h2{
 	color: #fdbd00;
 	background: black;
+	background-size: 50px;
 }

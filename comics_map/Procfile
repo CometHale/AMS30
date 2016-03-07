@@ -1,0 +1,1 @@
+web: gunicorn comics_map.wsgi --log-file -

@@ -17,6 +17,7 @@ class IRLCity(models.Model):
 		for sup in city_supers:
 			count = count + 1
 		return count
+	
 
 class Universe(models.Model):
 	company_name = models.CharField(max_length=300)
@@ -29,14 +30,11 @@ class Super(models.Model):
 	name = models.CharField(max_length=300,unique=True)
 	identity = models.CharField(max_length=300,default="identity")
 	origin_city = models.CharField(max_length=150)
-	origin_state = models.CharField(max_length=150)
+	# origin_state = models.CharField(max_length=150)
 	irl_city = models.ForeignKey(IRLCity,related_name="supers_related") #check to make
 	#sure that's the right style for a related name
-	first_appearance = models.DateField(default=datetime.date.today)
 	company_universe = models.ForeignKey(Universe,related_name="supers_related")
-	description = models.TextField()
 
 	def __str__(self):
 		return self.supername
-
 

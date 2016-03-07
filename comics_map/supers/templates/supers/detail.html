@@ -1,3 +1,15 @@
 {% load staticfiles %}
-<h1> {{cur_super.name}} --- {{cur_super.identity}} </h1>
-
+<link rel="stylesheet" type="text/css" href={% static 'supers/detail.css' %}/>
+<body>
+<a href="{% url 'supers:index' %}"><img src="{% static "supers/images/home.png" %}" alt="Home" style="width:150px;height:75px;"></a>
+<h1>{{cur_super.company_universe.company_name}} : {{cur_super.name}} </h1>
+	<div class="identityWrapper">
+		Identity: {{ cur_super.identity }}
+	</div>
+	<div class="originWrapper">
+		Origin City: {{ cur_super.origin_city }}
+	</div>
+	<div class="irlcityWrapper">
+		Real Life City: {{ cur_super.irl_city.name }}, {{ cur_super.company_universe.province }}
+	</div>
+</body>
